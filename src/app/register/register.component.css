@@ -1,0 +1,51 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.icone {
+    color: grey;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.margin50 {
+    margin-top: 100px;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+    text-align: center;
+}
+
+input.placeholder {
+    text-align: center;
+}
+
+div {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.imglogo {
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    top: -25px;
+}
+
+.img1 {
+    position: absolute;
+    left: 1361px;
+    top: -20px;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
