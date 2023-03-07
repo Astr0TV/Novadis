@@ -26,12 +26,6 @@ export class LoginComponent implements OnInit {
           {this.connexionservice.setUserSession(this.user);
           this.route.navigateByUrl('home');
           }
-          else if (this.user.role=='formateur')
-          {this.connexionservice.setUserSession(this.user);
-          this.route.navigateByUrl('homeformateur');
-          }else {
-            this.connexionservice.setUserSession(this.user);
-            this.route.navigateByUrl('homeadmin'); }
   
         } else { this.msg = 'Identifiants incorrectes !! '; 
         console.log('identifiants incorrectes ! ')}

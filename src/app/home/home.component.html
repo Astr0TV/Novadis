@@ -7,7 +7,7 @@
         <div class="col-sm-9">
             <div >
                 <p class="entete">
-                    <a (click)="('connexion')">
+                    <a (click)="goToPage('connexion')">
                         <mat-icon class="iconentete" style="color: red;">power_settings_new</mat-icon>
                     </a>
                 </p>
@@ -16,9 +16,6 @@
     </div>
     <div class="container  topBotomBordersIn">
         <a routerLink="/homecandidat">ACCEUIL</a>
-        <a routerLink="/pageevalcandidat">PAGE D'EVALUATION </a>
-        <a routerLink="/certificatcandidat">CERTIFICATIONS</a>
-        <a routerLink="/presencecandidat">PRESENCE</a>
 
     </div>
 
@@ -32,17 +29,6 @@
     </mat-form-field>
 
     <div class="table-wrapper">
-        <table class="fl-table">
-            <thead>
-                <tr>
-                    <th style="text-transform: uppercase; letter-spacing: 1px;">Intitulée de formation</th>
-                    <th style="text-transform: uppercase; letter-spacing: 1px;">NOM DE FORMATEUR</th>
-                    <th style="text-transform: uppercase; letter-spacing: 1px;">DATE DE DEBUT DE FORMATION</th>
-                    <th style="text-transform: uppercase; letter-spacing: 1px;">PROGRESSION</th>
-                    <th style="text-transform: uppercase; letter-spacing: 1px;">VALIDATION</th>
-                </tr>
-            </thead>
-           
-        </table>
+
     </div>
 </div>
