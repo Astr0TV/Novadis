@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
      /**Cette API permet la deconnexion  de l'utilisateur en cours*/
      goToPage(pageName:string ): void{
-      this.route.navigate([`${pageName}`]);
+      this.route.navigate([`login`]);
       localStorage.clear();
     } 
   
