@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
@@ -24,7 +26,9 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatIconModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    FormsModule,
+    HttpClientModule
     
   ],
   providers: [],

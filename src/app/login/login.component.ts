@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { ConnexionserviceService } from '../service/connexionservice.service';
 
 @Component({
@@ -13,13 +13,12 @@ export class LoginComponent implements OnInit {
   msg: any
 
   constructor(private http: HttpClient,private route: Router,private  connexionservice: ConnexionserviceService) { }
-
   ngOnInit(): void {
-
-  }
+    
+  } 
 
   connexion(val: any): any {
-    this.http.post('http://localhost:8089/connexion', val).subscribe({
+    this.http.post('http://localhost:8082/connexion', val).subscribe({
       next: (data) => {
         this.user = data;
         if (this.user != null ) {
@@ -38,7 +37,8 @@ export class LoginComponent implements OnInit {
         console.log('identifiants incorrectes ! ')}
       }, error: (err) => { console.log(err) }
     })
-  }  
+  }
+  
 
 
   
