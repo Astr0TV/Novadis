@@ -22,7 +22,11 @@ export class LoginComponent implements OnInit {
       next: (data) => {
         this.user = data;
         if (this.user != null ) {
-          if(this.user.role=='Admin')
+          if(this.user.role=='Admin' )
+          {this.connexionservice.setUserSession(this.user);
+          this.route.navigateByUrl('home');
+          }
+          if(this.user.role=='Condidat' && this.user.valider == true )
           {this.connexionservice.setUserSession(this.user);
           this.route.navigateByUrl('home');
           }

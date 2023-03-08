@@ -1,34 +1,49 @@
+<div class="col-sm-2">
+    <img src="/assets/logonovadis.png" width="150">
+</div>
 <div class="container">
     <div class="row">
-        <div class="col-sm-2">
-            <img src="/assets/logo1.png" width="150">
-        </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-9">
             <div >
-                <p class="entete">
-                    <a (click)="goToPage('connexion')">
-                        <mat-icon class="iconentete" style="color: red;">power_settings_new</mat-icon>
-                    </a>
-                </p>
-            </div><br><br>
+            </div>
         </div>
     </div>
     <div class="container  topBotomBordersIn">
-        <a routerLink="/homecandidat">ACCEUIL</a>
+        <a routerLink="">FIL D'ACTUALITE</a>
+        <a routerLink="">PLANNING</a>
+        <a routerLink="">PROFIL</a>
+        <a routerLink="">DISCUSSION</a>
+        <a routerLink="">MESSAGERIE</a>
+        <a (click)="goToPage('connexion')">
+            <mat-icon class="iconentete" style="color: red;">power_settings_new</mat-icon>
+        </a>
 
     </div>
 
     <br><br><br><br>
 
 
-    <mat-form-field class="px-16" style="width: 30%">
-        <input matInput #filter placeholder="Search..."  id="listSearch" autocomplete="off"
-            style="width: 100%">
-        <mat-icon matSuffix>search</mat-icon>
-    </mat-form-field>
 
     <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th style="text-transform: uppercase; letter-spacing: 1px;">NOM</th>
+                    <th style="text-transform: uppercase; letter-spacing: 1px;">PRENOM</th>
+                    <th style="text-transform: uppercase; letter-spacing: 1px;">EMAIL</th>
+                    <th style="text-transform: uppercase; letter-spacing: 1px;">ACTION</th>                </tr>
+            </thead>
+            <tbody *ngFor="let p of user">
+                <tr *ngIf="p.valider == false">
+                    <td>{{ p.nom }}</td>
+                    <td>{{p.prenom}}</td>
+                    <td>{{p.email}}</td>
+                    <td><button mat-raised-button color="primary" value="Connexion" (click)="updatestatus(p);showMessage()"> VALIDER
+                    </button></td>
+                </tr>
 
+                <tbody>
+        </table>
     </div>
 </div>

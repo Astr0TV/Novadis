@@ -6,20 +6,10 @@ import { Router } from '@angular/router';
 })
 export class ConnexionserviceService {
   user: any;
-  presence: any;
-  nomformation: any;
-  idgetaccept: any
-  updateformation: any
   iddoucument: any
-  modifinformation:any;
-  supprimeformateur: any
-  nbreformationparformateur:any;
-  presencevalider: any;
-  cartif: any
-  pdfformateur: any
-  attestationsformateur: any
+  updatestatus:any;
   email:any;
-  recommander: any
+
 
   constructor(private route: Router) { }
 
