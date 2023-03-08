@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-9">
-            <div >
+            <div>
             </div>
         </div>
     </div>
@@ -25,25 +25,30 @@
 
 
 
-    <div class="table-wrapper">
-        <table class="fl-table">
-            <thead>
-                <tr>
-                    <th style="text-transform: uppercase; letter-spacing: 1px;">NOM</th>
-                    <th style="text-transform: uppercase; letter-spacing: 1px;">PRENOM</th>
-                    <th style="text-transform: uppercase; letter-spacing: 1px;">EMAIL</th>
-                    <th style="text-transform: uppercase; letter-spacing: 1px;">ACTION</th>                </tr>
-            </thead>
-            <tbody *ngFor="let p of user">
-                <tr *ngIf="p.valider == false">
-                    <td>{{ p.nom }}</td>
-                    <td>{{p.prenom}}</td>
-                    <td>{{p.email}}</td>
-                    <td><button mat-raised-button color="primary" value="Connexion" (click)="updatestatus(p);showMessage()"> VALIDER
-                    </button></td>
-                </tr>
-
-                <tbody>
-        </table>
+<ng-container *ngIf="connexionnew">
+  <div *ngFor="let p of connexionnew">
+    <div *ngIf="p.role !== 'Condidat'" class="table-wrapper">
+      <table class="fl-table">
+        <thead>
+          <tr>
+            <th style="text-transform: uppercase; letter-spacing: 1px;">NOM</th>
+            <th style="text-transform: uppercase; letter-spacing: 1px;">PRENOM</th>
+            <th style="text-transform: uppercase; letter-spacing: 1px;">EMAIL</th>
+            <th style="text-transform: uppercase; letter-spacing: 1px;">ACTION</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let p of user">
+          <tr *ngIf="p.valider == false">
+            <td>{{ p.nom }}</td>
+            <td>{{p.prenom}}</td>
+            <td>{{p.email}}</td>
+            <td>
+              <button mat-raised-button color="primary" value="Connexion" (click)="updatestatus(p);showMessage()"> VALIDER
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</div>
+  </div>
+</ng-container>

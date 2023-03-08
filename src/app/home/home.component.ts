@@ -11,8 +11,24 @@ import Swal from 'sweetalert2'
 })
 export class HomeComponent implements OnInit {
   user: any;
+  connexionnew: any;
 
      ngOnInit(): void {
+
+      var test = JSON.parse(localStorage.getItem('userConnect') || '{}');
+      console.log('test.role:', test.role);
+      console.log('this.connexionservice.isConnected():', this.connexionservice.isConnected());
+      
+      if (this.connexionservice.isConnected()) {
+        if (test.role == 'Admin') {
+          this.route.navigateByUrl('home');
+        } else if (test.role == 'Condidat') {
+          this.route.navigateByUrl('home');
+        }
+      } else {
+        this.route.navigateByUrl('connexion');
+      }
+    
 
       this.http.get('http://localhost:8082/alluser').subscribe({
         next: (data) => { this.user = data; 
@@ -20,6 +36,14 @@ export class HomeComponent implements OnInit {
           console.log(data) },
         error: (err) => 
         {console.log(err); }
+      });
+
+      this.http.get('http://localhost:8082/user/' + test.id).subscribe({
+        next: (data) => { 
+          this.connexionnew = data;  
+          console.log(this.connexionnew)
+        },
+        error: (err) => { console.log(err); }
       });
   
      }

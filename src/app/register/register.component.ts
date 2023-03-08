@@ -21,7 +21,7 @@ export class RegisterComponent  implements OnInit{
       "prenom": prenom,
       "email": email,
       "mdp": mdp,
-      "role": "formateur",
+      "role": "Condidat",
       "valider": false
     };
 
